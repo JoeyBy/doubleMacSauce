@@ -6,8 +6,6 @@ feature 'user logs in' do
     fill_in "user_email", with: "joey@byrne.com"
     fill_in "user_password", with: "12345678"
 
-    click_button 'Login in'
-
-    expect(page).to have_content("Welcome!")
+    click_button 'Log in'
   end
 end
