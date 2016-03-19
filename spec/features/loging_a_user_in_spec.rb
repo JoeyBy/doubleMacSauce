@@ -5,7 +5,6 @@ feature 'user logs in' do
     visit '/users/sign_in'
     fill_in "user_email", with: "joey@byrne.com"
     fill_in "user_password", with: "12345678"
-    fill_in "user_password_confirmation", with: "12345678"
 
     click_button 'Login in'
 
