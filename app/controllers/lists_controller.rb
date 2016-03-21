@@ -13,6 +13,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
+    @user = User.find(current_user.id)
   end
 
   # GET /lists/1/edit
@@ -22,9 +23,10 @@ class ListsController < ApplicationController
   # POST /lists
   def create
     @list = List.new(list_params)
+    @list.user_id = current_user.id
 
     if @list.save
-      redirect_to @list, notice: 'List was successfully created.'
+      redirect_to root_path, notice: 'List was successfully created.'
     else
       render :new
     end
