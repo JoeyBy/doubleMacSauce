@@ -1,6 +1,10 @@
-<h1>HI!</h1>
+<h1>Welcome to the Todo App</h1>
+<% if user_signed_in? %>
+  <%= link_to "create list", new_list_path %>  
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% else %>
+  <%= link_to "signup", new_user_registration_path %>
+  <%= link_to "login", new_user_session_path %>
+<% end %>
 
 
-<%= link_to "signup", new_user_registration_path %>
-
-<%= link_to "create list", new_list_path %>

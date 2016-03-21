@@ -14,6 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
+<div class="header"><h2 class="firstName"><%= current_user %></h2></div>
   <%= render "flashes" -%>
   <%= yield %>
   <%= render "javascript" %>
