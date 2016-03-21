@@ -7,3 +7,9 @@
   <%= link_to "login", new_user_session_path %>
 <% end %>
 
+  <% @lists.each do |list| %>
+    <p class="list-title"><%= list.title %></p>
+
+    <%= link_to "Edit", user_list_path(current_user.id, list) %>
+
+  <% end %>
